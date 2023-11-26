@@ -26,4 +26,4 @@ services:
 networks:
   default:
     external:
-      name: 5g_files_default
+      name: 5g_docker_open5gs_default
