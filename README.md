@@ -51,7 +51,7 @@ docker-compose -f sa-deploy.yaml build
 sudo sysctl -w net.ipv4.ip_forward=1
 ```
 
-###### 5G SA deployment
+## 5G SA deployment
 
 ```
 # 5G Core Network
@@ -66,7 +66,7 @@ docker-compose -f nr-ue.yaml up -d && docker container attach nr_ue
 
 ## Configuration
 
-After run your 5G core network, you need to modify iptables rules for DOCKER-USER chain.
+After running your 5G core network, you need to modify iptables rules for DOCKER-USER chain.
 To do that, use commands below:
 
 ```
@@ -74,7 +74,7 @@ sudo iptables -I DOCKER-USER -i br-########1 -o br-########2 -j ACCEPT
 sudo iptables -I DOCKER-USER -i br-########2 -o br-########1 -j ACCEPT
 ```
 
-where br-########1 and br-########2 are bridges created by docker and, you can check their number, for instance using ```ip a```.
+where br-########1 and br-########2 are bridges created by docker and, you can check their names, for instance using ```ip a```.
 
 # Provisioning of SIM information
 
