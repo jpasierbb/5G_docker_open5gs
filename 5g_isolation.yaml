@@ -1,7 +1,7 @@
 version: '3'
 services:
   mongo:
-    image: mongo:6.0
+    image: mongo:4.4.6
     container_name: mongo
     command: --bind_ip 0.0.0.0
     env_file:
