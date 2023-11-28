@@ -55,7 +55,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ```
 # 5G Core Network
-docker-compose -f sa-deploy.yaml up
+docker-compose -f 5g_isolation.yaml up
 
 # UERANSIM gNB (RF simulated)
 docker-compose -f nr-gnb.yaml up -d && docker container attach nr_gnb
