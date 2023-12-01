@@ -85,6 +85,13 @@ Open (http://<DOCKER_HOST_IP>:3000) in a web browser, where <DOCKER_HOST_IP> is 
 Username : admin
 Password : 1423
 ```
+Then, add a subscriber using following information:
+```
+IMSI=001011234567895
+KI=8baf473f2f8fd09487cccbd7097c6862
+OP=11111111111111111111111111111111
+AMF=8000
+```
 
 ## Not supported
 - IPv6 usage in Docker
