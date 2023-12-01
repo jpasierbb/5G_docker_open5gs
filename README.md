@@ -35,10 +35,10 @@ after cloning repository
 git clone https://github.com/jpasierbb/5G_docker_open5gs.git
 sudo chmod +x 5G_docker_open5gs/* & sudo chmod +x 5G_docker_open5gs/*/*
 cd 5G_docker_open5gs/base
-docker build --no-cache --force-rm -t docker_open5gs .
+sudo docker build --no-cache --force-rm -t docker_open5gs .
 
 cd ../ueransim
-docker build --no-cache --force-rm -t docker_ueransim .
+sudo docker build --no-cache --force-rm -t docker_ueransim .
 ```
 
 #### Build and Run using docker-compose
@@ -47,7 +47,7 @@ docker build --no-cache --force-rm -t docker_ueransim .
 cd ..
 set -a
 source .env
-docker-compose -f sa-deploy.yaml build
+sudo docker-compose -f sa-deploy.yaml build
 sudo sysctl -w net.ipv4.ip_forward=1
 ```
 
@@ -55,13 +55,13 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 ```
 # 5G Core Network
-docker-compose -f 5g_isolation.yaml up
+sudo docker-compose -f 5g_isolation.yaml up
 
-# UERANSIM gNB (RF simulated)
-docker-compose -f nr-gnb.yaml up -d && docker container attach nr_gnb
+# UERANSIM gNB
+sudo docker-compose -f nr-gnb.yaml up -d && docker container attach nr_gnb
 
-# UERANSIM NR-UE (RF simulated)
-docker-compose -f nr-ue.yaml up -d && docker container attach nr_ue
+# UERANSIM NR-UE
+sudo docker-compose -f nr-ue.yaml up -d && docker container attach nr_ue
 ```
 
 ## Configuration
