@@ -20,6 +20,8 @@ br2=${bridge_array[1]}
 sudo iptables -I DOCKER-USER -i "$br1" -o "$br2" -j ACCEPT
 sudo iptables -I DOCKER-USER -i "$br2" -o "$br1" -j ACCEPT
 
+echo "Regula dodana: -i "$br1" -o "$br2" -j ACCEPT"
+echo "Regula dodana: -i "$br2" -o "$br1" -j ACCEPT"
 echo "Reguly iptables zostaly dodane pomyslnie."
 
 
