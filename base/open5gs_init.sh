@@ -42,14 +42,6 @@ elif [[ "$COMPONENT_NAME" =~ ^(bsf-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
 	/mnt/bsf/bsf_init.sh && sleep 10 && \
 	cd install/bin && ./open5gs-bsfd
-# elif [[ "$COMPONENT_NAME" =~ ^(hss-[[:digit:]]+$) ]]; then
-# 	echo "Deploying component: '$COMPONENT_NAME'"
-# 	/mnt/hss/hss_init.sh  && \
-# 	cd install/bin && sleep 10 && ./open5gs-hssd
-# elif [[ "$COMPONENT_NAME" =~ ^(mme-[[:digit:]]+$) ]]; then
-# 	echo "Deploying component: '$COMPONENT_NAME'"
-# 	/mnt/mme/mme_init.sh  && \
-# 	cd install/bin && ./open5gs-mmed
 elif [[ "$COMPONENT_NAME" =~ ^(nrf-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
 	/mnt/nrf/nrf_init.sh  && \
@@ -66,18 +58,6 @@ elif [[ "$COMPONENT_NAME" =~ ^(pcf-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
 	/mnt/pcf/pcf_init.sh && sleep 10 && \
     cd install/bin && ./open5gs-pcfd
-# elif [[ "$COMPONENT_NAME" =~ ^(pcrf-[[:digit:]]+$) ]]; then
-# 	echo "Deploying component: '$COMPONENT_NAME'"
-# 	/mnt/pcrf/pcrf_init.sh && sleep 10 && \
-#     cd install/bin && ./open5gs-pcrfd
-# elif [[ "$COMPONENT_NAME" =~ ^(sgwc-[[:digit:]]+$) ]]; then
-# 	echo "Deploying component: '$COMPONENT_NAME'"
-# 	/mnt/sgwc/sgwc_init.sh  && \
-#     cd install/bin && ./open5gs-sgwcd
-# elif [[ "$COMPONENT_NAME" =~ ^(sgwu-[[:digit:]]+$) ]]; then
-# 	echo "Deploying component: '$COMPONENT_NAME'"
-# 	/mnt/sgwu/sgwu_init.sh  && \
-#     cd install/bin && ./open5gs-sgwud
 elif [[ "$COMPONENT_NAME" =~ ^(smf-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
 	/mnt/smf/smf_init.sh  && \
