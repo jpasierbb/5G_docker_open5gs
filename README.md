@@ -28,6 +28,12 @@ and to avoid errors with permissions, after cloning repository use:
 sudo chmod +x 5G_docker_open5gs/* & sudo chmod +x 5G_docker_open5gs/*/*
 ```
 
+You can skip "sudo" in commands if you add your user to the Docker group:
+```
+sudo usermod -aG docker $USER
+```
+After adding the user, reboot your system.
+
 #### Clone repository and build a docker image of open5gs and ueransim
 
 ```
@@ -74,6 +80,10 @@ sudo iptables -I DOCKER-USER -i br-########2 -o br-########1 -j ACCEPT
 ```
 
 where br-########1 and br-########2 are bridges created by docker and, you can check their names, for instance using ```ip a```.
+
+To simplify this process, there are 2 bash scripts: 5g_iptables_config.sh and 5g_iptables_clear.sh.
+The first one finds two newest created bridges in the system and modifies iptables.
+The second one clears added rules to the iptables Docker Chain.
 
 # Provisioning of SIM information
 
