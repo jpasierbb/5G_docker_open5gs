@@ -23,11 +23,10 @@ Before you start building images, I highly recommand install some packages, to a
 sudo apt install npm git docker.io docker-compose wireshark -y
 ```
 
-and to avoid errors with permissions, use:
+and to avoid errors with permissions, after cloning repository use:
 ```
 sudo chmod +x 5G_docker_open5gs/* & sudo chmod +x 5G_docker_open5gs/*/*
 ```
-after cloning repository
 
 #### Clone repository and build a docker image of open5gs and ueransim
 
@@ -47,7 +46,7 @@ sudo docker build --no-cache --force-rm -t docker_ueransim .
 cd ..
 set -a
 source .env
-sudo docker-compose -f sa-deploy.yaml build
+sudo docker-compose -f 5g_isolation.yaml build
 sudo sysctl -w net.ipv4.ip_forward=1
 ```
 
