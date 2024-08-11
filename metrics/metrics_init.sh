@@ -40,5 +40,16 @@ sed -i 's|AMF_IP|'$AMF_IP'|g' /config/prometheus.yml
 sed -i 's|SMF_IP|'$SMF_IP'|g' /config/prometheus.yml
 sed -i 's|PCF_IP|'$PCF_IP'|g' /config/prometheus.yml
 sed -i 's|UPF_IP|'$UPF_IP'|g' /config/prometheus.yml
+# sed -i 's|AUSF_IP|'$AUSF_IP'|g' /config/prometheus.yml
+# sed -i 's|BSF_IP|'$BSF_IP'|g' /config/prometheus.yml
+# sed -i 's|NRF_IP|'$NRF_IP'|g' /config/prometheus.yml
+# sed -i 's|NSSF_IP|'$NSSF_IP'|g' /config/prometheus.yml
+# sed -i 's|SCP_IP|'$SCP_IP'|g' /config/prometheus.yml
+# sed -i 's|UDM_IP|'$UDM_IP'|g' /config/prometheus.yml
+# sed -i 's|UDR_IP|'$UDR_IP'|g' /config/prometheus.yml
 
-./prometheus --config.file=/config/prometheus.yml
+./prometheus --config.file=/config/prometheus.yml &
+
+service grafana-server start
+
+tail -f /dev/null

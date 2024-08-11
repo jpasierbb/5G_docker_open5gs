@@ -17,3 +17,24 @@ scrape_configs:
   - job_name: 'upf'
     static_configs:
       - targets: ['UPF_IP:9091']
+  # - job_name: 'ausf'
+  #   static_configs:
+  #     - targets: ['AUSF_IP:9091']
+  # - job_name: 'bsf'
+  #   static_configs:
+  #     - targets: ['BSF_IP:9091']
+  # - job_name: 'nrf'
+  #   static_configs:
+  #     - targets: ['NRF_IP:9091']
+  # - job_name: 'nssf'
+  #   static_configs:
+  #     - targets: ['NSSF_IP:9091']
+  # - job_name: 'scp'
+  #   static_configs:
+  #     - targets: ['SCP_IP:9091']
+  # - job_name: 'udm'
+  #   static_configs:
+  #     - targets: ['UDM_IP:9091']
+  # - job_name: 'udr'
+  #   static_configs:
+  #     - targets: ['UDR_IP:9091']
