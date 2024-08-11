@@ -29,10 +29,19 @@ FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 
 ENV PROMETHEUS_VERSION=2.40.2
+ENV GRAFANA_VERSION=9.0.0
 
 RUN apt-get update && \
-    apt-get install -y wget && \
-    wget -q https://github.com/prometheus/prometheus/releases/download/v$PROMETHEUS_VERSION/prometheus-$PROMETHEUS_VERSION.linux-$(dpkg --print-architecture).tar.gz && \
+    apt-get install -y wget gnupg2 software-properties-common apt-transport-https
+
+RUN wget -q https://github.com/prometheus/prometheus/releases/download/v$PROMETHEUS_VERSION/prometheus-$PROMETHEUS_VERSION.linux-$(dpkg --print-architecture).tar.gz && \
     tar xvfz prometheus-$PROMETHEUS_VERSION.linux-$(dpkg --print-architecture).tar.gz
+
+RUN apt-get update && \
+    apt-get install -y libfontconfig1
+
+RUN wget -q https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_$(dpkg --print-architecture).deb && \
+    dpkg -i grafana_${GRAFANA_VERSION}_$(dpkg --print-architecture).deb && \
+    apt-get install -f
 
 CMD /mnt/metrics/metrics_init.sh
