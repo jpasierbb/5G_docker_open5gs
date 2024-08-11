@@ -18,6 +18,9 @@ nssf:
         port: 7777
         s_nssai:
           sst: 1
+    # metrics:
+    #   - addr: NSSF_IP
+    #     port: 9091
 
 scp:
     sbi:

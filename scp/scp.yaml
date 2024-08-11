@@ -14,6 +14,9 @@ scp:
       addr:
         - SCP_IP
       port: 7777
+    # metrics:
+    #   - addr: SCP_IP
+    #     port: 9091
 
 nrf:
     sbi:

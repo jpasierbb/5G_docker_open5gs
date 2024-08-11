@@ -13,6 +13,9 @@ ausf:
     sbi:
       - addr: AUSF_IP
         port: 7777
+    # metrics:
+    #   - addr: AUSF_IP
+    #     port: 9091
 
 scp:
     sbi:

@@ -15,6 +15,9 @@ bsf:
     sbi:
       - addr: BSF_IP
         port: 7777
+    # metrics:
+    #   - addr: BSF_IP
+    #     port: 9091
 
 scp:
     sbi:

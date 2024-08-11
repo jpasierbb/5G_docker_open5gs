@@ -20,6 +20,9 @@ udm:
     sbi:
       - addr: UDM_IP
         port: 7777
+    # metrics:
+    #   - addr: UDM_IP
+    #     port: 9091
 
 scp:
     sbi:
