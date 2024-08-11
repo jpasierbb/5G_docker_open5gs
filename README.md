@@ -102,5 +102,24 @@ OP=11111111111111111111111111111111
 AMF=8000
 ```
 
+# Monitoring metrics:
+
+The project implements Prometheus and Grafana. Prometheus is used to monitor metrics (the current Open5GS version supports monitoring of AMF, SMF, PCF and UPF)
+and Grafana is used to create visualizations.
+
+## Prometheus:
+
+Prometheus is available at http://localhost:9090. You can specify the component you are interested in and monitor it there.
+Alternatively, you can go to http://localhost:9090/metrics to find metrics from every single component.
+
+## Grafana:
+
+Grafana is available at http://localhost:3030 with standard credentials:
+```
+login: admin
+password: admin
+```
+After logging in, you can create visualizations based on Prometheus metrics.
+
 ## Not supported
 - IPv6 usage in Docker
